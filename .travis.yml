@@ -25,5 +25,5 @@ before_script:
 
 script:
   - vendor/bin/phpcs -n -l src/ src/Reflection/ src/Rule/ src/Type tests/ tests/Reflection/ tests/Rule/ tests/Type/
-  - vendor/bin/phpunit -c "tests/phpunit.xml" tests/
+  - vendor/bin/phpunit -c "phpunit.xml" tests/php
   - vendor/bin/phpstan analyse src/ tests/ -c "tests/phpstan.neon" -a "tests/bootstrap-phpstan.php" --level 4
