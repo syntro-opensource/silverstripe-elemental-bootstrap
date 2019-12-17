@@ -1,0 +1,19 @@
+---
+name: silverstripe-elemental-bootstrap
+---
+Page:
+  allowed_elements:
+    - Syntro\SilverstripeElementalBootstrap\Elements\BootstrapAlert
+    - Syntro\SilverstripeElementalBootstrap\Elements\BootstrapCard
+    - Syntro\SilverstripeElementalBootstrap\Elements\BootstrapCarousel
+    - Syntro\SilverstripeElementalBootstrap\Elements\BootstrapCol
+    - Syntro\SilverstripeElementalBootstrap\Elements\BootstrapComplexCard
+    - Syntro\SilverstripeElementalBootstrap\Elements\BootstrapContent
+    - Syntro\SilverstripeElementalBootstrap\Elements\BootstrapImage
+    - Syntro\SilverstripeElementalBootstrap\Elements\BootstrapRow
+SilverStripe\View\SSViewer:
+  rewrite_hash_links: false
+
+SilverStripe\AssetAdmin\Forms\ImageFormFactory:
+  extensions:
+    - Syntro\SilverstripeElementalBootstrap\Extensions\BootstrapEditorImageExtension

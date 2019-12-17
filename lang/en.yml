@@ -1,0 +1,30 @@
+en:
+  Syntro\SilverstripeElementalBootstrap\Elements\BootastrapElement:
+    BlockType: Bootstrap Element
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapAlert:
+    BlockType: Alert
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapCard:
+    BlockType: Card
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapCarousel:
+    BlockType: Carousel
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapCol:
+    BlockType: Column
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapComplexCard:
+    BlockType: Complex Card
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapContent:
+    BlockType: Content
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapImage:
+    BlockType: Image
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapRow:
+    BlockType: Row
+
+
+  Syntro\SilverstripeElementalBootstrap\Extensions\BootstrapExtension:
+    OuterClassesLabel: "Custom classes on outer container (col):"
+    OuterClassesDescription:
+      Use styling classes like "<code>mt-3</code>" or "<code>p-2 p-md-3</code>" to indicate padding and margin. </br>
+      You can find more information in the <a href="https://getbootstrap.com/docs/4.3/layout/grid/" target="__blank">Bootstrap Documentation</a>.
+    InnerClassesLabel: "Custom classes on inner container:"
+    InnerClassesDescription:
+      Use styling classes like "<code>mt-3</code>" or "<code>p-2 p-md-3</code>" to indicate padding and margin. </br>
+      You can find more information in the <a href="https://getbootstrap.com/docs/4.3/layout/grid/" target="__blank">Bootstrap Documentation</a>.
