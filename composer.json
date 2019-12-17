@@ -32,5 +32,5 @@
         "phpstan": "../../bin/phpstan analyse src/ --memory-limit=1G -c phpstan-dev.neon -a ../../symbiote/silverstripe-phpstan/bootstrap.php --no-ansi --level 4",
         "phpunit": "../../bin/phpunit",
         "phpunit-flush": "../../bin/phpunit . '' flush=1"
-    },
+    }
 }
