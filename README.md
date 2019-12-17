@@ -1,5 +1,6 @@
 # Silverstripe Elemental Bootstrap
 
+[![phpstan](https://img.shields.io/badge/PHPStan-enabled-success)](https://github.com/phpstan/phpstan)
 
 This module takes the [dnadesign/silverstripe-elemental](https://github.com/dnadesign/silverstripe-elemental)
 module and uses it to simplify bootstrap layouting.
