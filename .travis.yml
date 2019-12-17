@@ -9,6 +9,7 @@ env:
     - COMPOSER_ROOT_VERSION=5.0.x-dev
     - SS_BASE_URL="https://localhost/"
     - DB=MYSQL
+    - SS_ENVIRONMENT_TYPE="dev"
   matrix:
     - RECIPE_VERSION=4.3.x-dev
     - RECIPE_VERSION=4.4.x-dev
@@ -24,6 +25,6 @@ before_script:
   - composer install --prefer-dist --no-interaction --no-progress --no-suggest --optimize-autoloader --verbose --profile
 
 script:
-  - vendor/bin/phpcs -n -l src/ src/Reflection/ src/Rule/ src/Type tests/ tests/Reflection/ tests/Rule/ tests/Type/
+  - vendor/bin/phpcs -n -l src/ tests/Rule/ tests/php
   - vendor/bin/phpunit -c "phpunit.xml" tests/php
   - vendor/bin/phpstan analyse src/ tests/ -c "tests/phpstan.neon" -a "tests/bootstrap-phpstan.php" --level 4
