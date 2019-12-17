@@ -9,6 +9,7 @@ env:
     - COMPOSER_ROOT_VERSION=5.0.x-dev
     - SS_BASE_URL="https://localhost/"
     - DB=MYSQL
+    - PDO=1
     - SS_ENVIRONMENT_TYPE="dev"
   matrix:
     - RECIPE_VERSION=4.3.x-dev
