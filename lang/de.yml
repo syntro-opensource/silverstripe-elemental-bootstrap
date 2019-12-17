@@ -1,0 +1,30 @@
+en:
+  Syntro\SilverstripeElementalBootstrap\Elements\BootastrapElement:
+    BlockType: Bootstrap Element
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapAlert:
+    BlockType: Warnung
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapCard:
+    BlockType: Karte
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapCarousel:
+    BlockType: Karousel
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapCol:
+    BlockType: Reihe
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapComplexCard:
+    BlockType: Komplexe Karte
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapContent:
+    BlockType: Inhalt
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapImage:
+    BlockType: Bild
+  Syntro\SilverstripeElementalBootstrap\Elements\BootstrapRow:
+    BlockType: Zeile
+
+
+  Syntro\SilverstripeElementalBootstrap\Extensions\BootstrapExtension:
+    OuterClassesLabel: "Benutzerdefinierte css Klassen auf dem äusseren Container (col):"
+    OuterClassesDescription:
+      Benutze Styling-Klassen wie "<code>mt-3</code>" oder "<code>p-2 p-md-3</code>" um padding und margin zu definieren. </br>
+      Mehr Informationen findest du in der  <a href="https://getbootstrap.com/docs/4.3/layout/grid/" target="__blank">Bootstrap Dokumentation</a>.
+    InnerClassesLabel: "Benutzerdefinierte css Klassen auf dem inneren Element:"
+    InnerClassesDescription:
+      Benutze Styling-Klassen wie "<code>mt-3</code>" oder "<code>p-2 p-md-3</code>" um padding und margin zu definieren. </br>
+      Mehr Informationen findest du in der  <a href="https://getbootstrap.com/docs/4.3/layout/grid/" target="__blank">Bootstrap Dokumentation</a>.

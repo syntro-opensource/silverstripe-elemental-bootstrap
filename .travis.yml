@@ -1,4 +1,7 @@
 language: php
+dist: trusty
+
+
 php:
   - 7.1
   - 7.2
@@ -9,6 +12,8 @@ env:
     - COMPOSER_ROOT_VERSION=5.0.x-dev
     - SS_BASE_URL="https://localhost/"
     - DB=MYSQL
+    - PDO=1
+    - SS_ENVIRONMENT_TYPE="dev"
   matrix:
     - RECIPE_VERSION=4.3.x-dev
     - RECIPE_VERSION=4.4.x-dev
@@ -24,6 +29,6 @@ before_script:
   - composer install --prefer-dist --no-interaction --no-progress --no-suggest --optimize-autoloader --verbose --profile
 
 script:
-  - vendor/bin/phpcs -n -l src/ src/Reflection/ src/Rule/ src/Type tests/ tests/Reflection/ tests/Rule/ tests/Type/
-  - vendor/bin/phpunit -c "tests/phpunit.xml" tests/
-  - vendor/bin/phpstan analyse src/ tests/ -c "tests/phpstan.neon" -a "tests/bootstrap-phpstan.php" --level 4
+  - vendor/bin/phpcs -n -l src/ tests/php/
+  - vendor/bin/phpunit -c "phpunit.xml" tests/php
+  - vendor/bin/phpstan analyse src/ tests/ -c "phpstan.neon" -a vendor/symbiote/silverstripe-phpstan/bootstrap.php --level 4

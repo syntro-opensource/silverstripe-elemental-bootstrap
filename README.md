@@ -1,5 +1,6 @@
 # Silverstripe Elemental Bootstrap
 
+[![Build Status](https://travis-ci.org/syntro-opensource/silverstripe-elemental-bootstrap.svg?branch=develop)](https://travis-ci.org/syntro-opensource/silverstripe-elemental-bootstrap)
 [![phpstan](https://img.shields.io/badge/PHPStan-enabled-success)](https://github.com/phpstan/phpstan)
 
 This module takes the [dnadesign/silverstripe-elemental](https://github.com/dnadesign/silverstripe-elemental)
