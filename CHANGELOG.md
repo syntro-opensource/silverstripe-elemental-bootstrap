@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [Unreleased]
-
+### Added
+* BSD 3-Clause license
 ## [1.0.0] - 2019-12-17
 ### Changed
 * github release
