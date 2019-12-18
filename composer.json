@@ -8,6 +8,7 @@
             "email": "hello@syntro.ch"
         }
     ],
+    "license": "BSD-3-Clause",
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
