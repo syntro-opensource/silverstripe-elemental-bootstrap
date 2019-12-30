@@ -1,10 +1,13 @@
 # Silverstripe Elemental Bootstrap
 
+> This project is still a work-in-progress and will be improved over time. If you feel something is missing, feel free to open an issue or a pull request
+
 [![Build Status](https://travis-ci.org/syntro-opensource/silverstripe-elemental-bootstrap.svg?branch=develop)](https://travis-ci.org/syntro-opensource/silverstripe-elemental-bootstrap)
 [![phpstan](https://img.shields.io/badge/PHPStan-enabled-success)](https://github.com/phpstan/phpstan)
 
 This module takes the [dnadesign/silverstripe-elemental](https://github.com/dnadesign/silverstripe-elemental)
 module and uses it to simplify bootstrap layouting.
+
 
 ## Usage:
 ```
