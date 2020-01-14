@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   * Card
   * Carousel
   * Image
+* Documentation
 ### Changed
 * Image has no title field anymore
 ## [1.0.1] - 2019-12-18
