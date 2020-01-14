@@ -101,9 +101,11 @@ class BootstrapCard extends BootstrapElement
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
-        if ($this->CardImageTop() && $this->CardImageTop()->exists() && $this->CardImageTop()->getIsImage()) {
-            $blockSchema['fileURL'] = $this->CardImageTop()->CMSThumbnail()->getURL();
-            $blockSchema['fileTitle'] = $this->CardImageTop()->getTitle();
+        /** @var Image|null */
+        $image = $this->CardImageTop();
+        if ($image && $image->exists() && $image->getIsImage()) {
+            $blockSchema['fileURL'] = $image->CMSThumbnail()->getURL();
+            $blockSchema['fileTitle'] = $image->getTitle();
         }
         $blockSchema['content'] = $this->getSummary();
         return $blockSchema;

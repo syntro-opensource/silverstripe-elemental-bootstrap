@@ -129,6 +129,7 @@ class BootstrapCarousel extends BootstrapElement
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
+        /** @var Image|null */
         $image = $this->Images()->first();
         if ($image && $image->exists() && $image->getIsImage()) {
             $blockSchema['fileURL'] = $image->CMSThumbnail()->getURL();

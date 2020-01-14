@@ -114,9 +114,11 @@ class BootstrapImage extends BootstrapElement
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
-        if ($this->Image() && $this->Image()->exists() && $this->Image()->getIsImage()) {
-            $blockSchema['fileURL'] = $this->Image()->CMSThumbnail()->getURL();
-            $blockSchema['fileTitle'] = $this->Image()->getTitle();
+        /** @var Image|null */
+        $image = $this->Image();
+        if ($image && $image->exists() && $image->getIsImage()) {
+            $blockSchema['fileURL'] = $image->CMSThumbnail()->getURL();
+            $blockSchema['fileTitle'] = $image->getTitle();
         }
         return $blockSchema;
     }
