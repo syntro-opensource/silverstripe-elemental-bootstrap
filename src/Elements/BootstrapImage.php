@@ -74,9 +74,26 @@ class BootstrapImage extends BootstrapElement
                     ->setIsMultiUpload(false),
                     'Title'
                 );
+                $fields->removeByName([
+                    'Title'
+                ]);
             }
         );
          return parent::getCMSFields();
+    }
+
+
+    /**
+     * getTitle - generate the Title from the Image
+     *
+     * @return null|string
+     */
+    public function getTitle()
+    {
+        if ($this->Image) {
+            return $this->Image->getTitle();
+        }
+        return null;
     }
 
     /**
