@@ -37,5 +37,18 @@ class BootstrapMedia extends BootstrapElement
 }
 ```
 You can also use the `BootstrapExtension` extension on a class extending the
-original elemental classes to achieve the same result, but this will require you
-to add a template for the Class that
+original elemental classes to achieve the same result.
+
+In the Template, make sure to include the bootstrap classes correctly as seen
+in the `BootstrapImage` block:
+```html
+<% if isCol %>
+  <div class="$LayoutClasses $OuterClasses">
+    <img src="$Image.URL" class="img-fluid $InnerClasses" alt="$Image.Title">
+  </div>
+<% else %>
+  <img src="$Image.URL" class="img-fluid $InnerClasses" alt="$Image.Title">
+<% end_if %>
+```
+use `isCol()` to determine wether the parent object is a column (in this case,
+no layout classes are to be rendered).
