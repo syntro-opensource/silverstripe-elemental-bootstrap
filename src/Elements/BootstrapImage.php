@@ -105,4 +105,19 @@ class BootstrapImage extends BootstrapElement
     {
         return _t(__CLASS__ . '.BlockType', 'Image');
     }
+
+    /**
+     * Return file title and thumbnail for summary section of ElementEditor
+     *
+     * @return array
+     */
+    protected function provideBlockSchema()
+    {
+        $blockSchema = parent::provideBlockSchema();
+        if ($this->Image() && $this->Image()->exists() && $this->Image()->getIsImage()) {
+            $blockSchema['fileURL'] = $this->Image()->CMSThumbnail()->getURL();
+            $blockSchema['fileTitle'] = $this->Image()->getTitle();
+        }
+        return $blockSchema;
+    }
 }
