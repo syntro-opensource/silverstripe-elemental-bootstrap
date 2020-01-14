@@ -120,4 +120,20 @@ class BootstrapCarousel extends BootstrapElement
     {
         return $value-1;
     }
+
+    /**
+     * Return file title and thumbnail for summary section of ElementEditor
+     *
+     * @return array
+     */
+    protected function provideBlockSchema()
+    {
+        $blockSchema = parent::provideBlockSchema();
+        $image = $this->Images()->first();
+        if ($image && $image->exists() && $image->getIsImage()) {
+            $blockSchema['fileURL'] = $image->CMSThumbnail()->getURL();
+            $blockSchema['fileTitle'] = $image->getTitle();
+        }
+        return $blockSchema;
+    }
 }
