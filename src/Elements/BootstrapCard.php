@@ -5,6 +5,7 @@ namespace Syntro\SilverstripeElementalBootstrap\Elements;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
+use SilverStripe\ORM\FieldType\DBField;
 use Syntro\SilverstripeElementalBootstrap\Elements\BootstrapElement;
 use Syntro\SilverstripeElementalBootstrap\Controllers\BootstrapElementController;
 
@@ -90,5 +91,33 @@ class BootstrapCard extends BootstrapElement
     public function getType()
     {
         return _t(__CLASS__ . '.BlockType', 'Card');
+    }
+
+    /**
+     * Return file title and thumbnail for summary section of ElementEditor
+     *
+     * @return array
+     */
+    protected function provideBlockSchema()
+    {
+        $blockSchema = parent::provideBlockSchema();
+        /** @var Image|null */
+        $image = $this->CardImageTop();
+        if ($image && $image->exists() && $image->getIsImage()) {
+            $blockSchema['fileURL'] = $image->CMSThumbnail()->getURL();
+            $blockSchema['fileTitle'] = $image->getTitle();
+        }
+        $blockSchema['content'] = $this->getSummary();
+        return $blockSchema;
+    }
+
+    /**
+     * Return a Summary string
+     *
+     * @return null|string
+     */
+    public function getSummary()
+    {
+        return DBField::create_field('HTMLText', $this->Body)->Summary(20);
     }
 }

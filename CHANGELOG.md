@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * .gitattribute file
 * Contributing guide (#4)
+* Previews for blocks
+  * Alert
+  * Card
+  * Carousel
+  * Image
+### Changed
+* Image has no title field anymore
 ## [1.0.1] - 2019-12-18
 ### Added
 * BSD 3-Clause license

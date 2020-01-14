@@ -74,9 +74,26 @@ class BootstrapImage extends BootstrapElement
                     ->setIsMultiUpload(false),
                     'Title'
                 );
+                $fields->removeByName([
+                    'Title'
+                ]);
             }
         );
          return parent::getCMSFields();
+    }
+
+
+    /**
+     * getTitle - generate the Title from the Image
+     *
+     * @return null|string
+     */
+    public function getTitle()
+    {
+        if ($this->Image) {
+            return $this->Image->getTitle();
+        }
+        return null;
     }
 
     /**
@@ -87,5 +104,22 @@ class BootstrapImage extends BootstrapElement
     public function getType()
     {
         return _t(__CLASS__ . '.BlockType', 'Image');
+    }
+
+    /**
+     * Return file title and thumbnail for summary section of ElementEditor
+     *
+     * @return array
+     */
+    protected function provideBlockSchema()
+    {
+        $blockSchema = parent::provideBlockSchema();
+        /** @var Image|null */
+        $image = $this->Image();
+        if ($image && $image->exists() && $image->getIsImage()) {
+            $blockSchema['fileURL'] = $image->CMSThumbnail()->getURL();
+            $blockSchema['fileTitle'] = $image->getTitle();
+        }
+        return $blockSchema;
     }
 }
