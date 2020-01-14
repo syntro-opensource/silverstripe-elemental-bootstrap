@@ -3,6 +3,7 @@
 namespace Syntro\SilverstripeElementalBootstrap\Elements;
 
 use SilverStripe\Forms\FieldList;
+use SilverStripe\ORM\FieldType\DBField;
 use Syntro\SilverstripeElementalBootstrap\Elements\BootstrapElement;
 use Syntro\SilverstripeElementalBootstrap\Controllers\BootstrapElementController;
 
@@ -62,5 +63,32 @@ class BootstrapAlert extends BootstrapElement
     public function getType()
     {
         return _t(__CLASS__ . '.BlockType', 'Alert');
+    }
+
+    /**
+     * provideBlockSchema - provide the summary to the block
+     *
+     * @return array
+     */
+    protected function provideBlockSchema()
+    {
+        $blockSchema = parent::provideBlockSchema();
+        $blockSchema['content'] = $this->getSummary();
+        return $blockSchema;
+    }
+
+    /**
+     * Return a Summary string
+     *
+     * @return null|string
+     */
+    public function getSummary()
+    {
+        if ($this->AlertType && $this->Content) {
+            $type = $this->AlertType;
+            $message = DBField::create_field('HTMLText', $this->Content)->Summary(20);
+            return "$type: $message";
+        }
+        return null;
     }
 }
